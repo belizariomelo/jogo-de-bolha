@@ -1,9 +1,32 @@
-var answer = prompt("Digite o amor da sua vida para jogar:");
+// Prompt para solicitar o nome do amor da vida
+var loverName = prompt("Digite o amor da sua vida para jogar:");
 
-if (answer.toLowerCase() !== "belizário") {
-  alert("Resposta incorreta. Tente novamente.");
-  location.reload(); // recarrega a página se a resposta estiver incorreta
+// Verifica se a resposta é igual a "BELIZÁRIO" em letras minúsculas ou maiúsculas
+if (loverName.toLowerCase() === "belizário") {
+
+  // Adiciona um alerta se a resposta for correta
+  alert("Own que fofo penso o mesmo Nêssa <3");
+
+  // Esconde o botão de início e mostra o botão de reinício
+  startButton.style.display = "none";
+  restartButton.style.display = "block";
+  
+  // Inicia o intervalo para criar bolhas
+  var bubbleInterval = setInterval(function () {
+    // código para criar bolhas aqui
+  }, 1000);
+
+  // Código para contabilizar pontos e remover bolhas aqui
 }
+
+// Se a resposta for incorreta, recarrega a página
+else {
+  location.reload();
+}
+
+restartButton.addEventListener("click", function () {
+  location.reload();
+});
 var board = document.getElementById("board");
 var score = document.querySelector("#score span");
 var bubbles = [];
