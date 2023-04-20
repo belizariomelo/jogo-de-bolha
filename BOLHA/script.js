@@ -5,7 +5,7 @@ var loverName = prompt("Digite o amor da sua vida para jogar:");
 if (loverName.toLowerCase() === "belizário"|| loverName.toLowerCase() === "belizario") {
 
   // Adiciona um alerta se a resposta for correta
-  alert("Own que fofo penso o mesmo Nêssa <3");
+  alert("Own que fofo, eu sinto o mesmo Nêssa ❤😍 ");
 
   // Esconde o botão de início e mostra o botão de reinício
   startButton.style.display = "none";
