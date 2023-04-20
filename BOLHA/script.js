@@ -1,3 +1,9 @@
+var answer = prompt("Digite o amor da sua vida para jogar:");
+
+if (answer.toLowerCase() !== "belizário") {
+  alert("Resposta incorreta. Tente novamente.");
+  location.reload(); // recarrega a página se a resposta estiver incorreta
+}
 var board = document.getElementById("board");
 var score = document.querySelector("#score span");
 var bubbles = [];
@@ -23,11 +29,7 @@ startButton.addEventListener("click", function () {
     if (bubbles.length > 11) {
       board.removeChild(bubbles[0]);
       bubbles.shift();
-      if (bubbles.length > 10) {
-        alert("PÔ VANESSA MAIS RÁPIDO"); // mostra alerta se houver mais de 10 bolhas no board
-        clearInterval(bubbleInterval);
-       
-      }
+   
     }
     if (count >= pointThreshold) { // verifica se atingiu o limite de pontos
       clearInterval(bubbleInterval); // interrompe o intervalo atual
@@ -47,14 +49,11 @@ startButton.addEventListener("click", function () {
           board.removeChild(bubbles[0]);
           bubbles.shift();
           if (bubbles.length > 10) {
-            alert("PÔ VANESSA MAIS RÁPIDO"); // mostra alerta se houver mais de 10 bolhas no board
+        
             clearInterval(bubbleInterval);
             restartButton.style.display = "none";
             startButton.style.display = "block";
-            if (confirm("Game over!")) { // exibe uma caixa de confirmação ao invés de um alerta
-              location.reload(); // recarrega a página se o usuário clicar em "OK"
-             
-            }
+      
             
           }
         }
