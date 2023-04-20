@@ -2,7 +2,7 @@
 var loverName = prompt("Digite o amor da sua vida para jogar:");
 
 // Verifica se a resposta é igual a "BELIZÁRIO" em letras minúsculas ou maiúsculas
-if (loverName.toLowerCase() === "belizário") {
+if (loverName.toLowerCase() === "belizário"|| loverName.toLowerCase() === "belizario") {
 
   // Adiciona um alerta se a resposta for correta
   alert("Own que fofo penso o mesmo Nêssa <3");
