@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  color: #252222;
   background-color: #8c8686;
   text-align: center;
 }
@@ -11,9 +13,11 @@ body {
 }
 
 #score {
+  font-family: 'Montserrat', sans-serif;
   font-size: 24px;
-  font-weight: bold;
+  font-weight:900;
   margin-bottom: 20px;
+  color: #252222;
 }
 .ponto {
   color: #336652;
@@ -33,7 +37,7 @@ body {
   overflow: hidden;
   cursor: pointer;
   transition: 0.5s;
-  font-weight: 400;
+  font-weight: 900;
   font-size: 17px;
   border: 1px solid;
   font-family: inherit;
@@ -90,7 +94,7 @@ body {
   overflow: hidden;
   cursor: pointer;
   transition: 0.5s;
-  font-weight: 400;
+  font-weight: 900;
   font-size: 17px;
   border: 1px solid;
   font-family: inherit;
