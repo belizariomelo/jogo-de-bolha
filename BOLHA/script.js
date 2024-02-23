@@ -1,8 +1,17 @@
+var startButton = document.getElementById("start");
+var restartButton = document.getElementById("restart");
+var board = document.getElementById("board");
+var score = document.querySelector("#score span");
+var bubbles = [];
+var count = 0;
+var pointThreshold = 5; // define o limite de pontos para aumentar a velocidade
+var speedIncrease = 0.2; // define o aumento percentual da velocidade
+
 // Prompt para solicitar o nome do amor da vida
 var loverName = prompt("Digite o amor da sua vida para jogar:");
 
 // Verifica se a resposta é igual a "BELIZÁRIO" em letras minúsculas ou maiúsculas
-if (loverName.toLowerCase() === "belizário"|| loverName.toLowerCase() === "belizario") {
+if (loverName && (loverName.toLowerCase() === "belizário" || loverName.toLowerCase() === "belizario")) {
 
   // Adiciona um alerta se a resposta for correta
   alert("Own que fofo, eu sinto o mesmo Nêssa ❤😍 ");
@@ -10,35 +19,8 @@ if (loverName.toLowerCase() === "belizário"|| loverName.toLowerCase() === "beli
   // Esconde o botão de início e mostra o botão de reinício
   startButton.style.display = "none";
   restartButton.style.display = "block";
-  
+
   // Inicia o intervalo para criar bolhas
-  var bubbleInterval = setInterval(function () {
-    // código para criar bolhas aqui
-  }, 1000);
-
-  // Código para contabilizar pontos e remover bolhas aqui
-}
-
-// Se a resposta for incorreta, recarrega a página
-else {
-  location.reload();
-}
-
-restartButton.addEventListener("click", function () {
-  location.reload();
-});
-var board = document.getElementById("board");
-var score = document.querySelector("#score span");
-var bubbles = [];
-var count = 0;
-var startButton = document.getElementById("start");
-var restartButton = document.getElementById("restart");
-var pointThreshold = 5; // define o limite de pontos para aumentar a velocidade
-var speedIncrease = 0.2; // define o aumento percentual da velocidade
-
-startButton.addEventListener("click", function () {
-  startButton.style.display = "none";
-  restartButton.style.display = "block";
   var bubbleInterval = setInterval(function () {
     var bubble = document.createElement("div");
     bubble.className = "bubble";
@@ -52,7 +34,6 @@ startButton.addEventListener("click", function () {
     if (bubbles.length > 11) {
       board.removeChild(bubbles[0]);
       bubbles.shift();
-   
     }
     if (count >= pointThreshold) { // verifica se atingiu o limite de pontos
       clearInterval(bubbleInterval); // interrompe o intervalo atual
@@ -72,12 +53,9 @@ startButton.addEventListener("click", function () {
           board.removeChild(bubbles[0]);
           bubbles.shift();
           if (bubbles.length > 10) {
-        
             clearInterval(bubbleInterval);
             restartButton.style.display = "none";
             startButton.style.display = "block";
-      
-            
           }
         }
       }, newSpeed);
@@ -92,7 +70,9 @@ startButton.addEventListener("click", function () {
       score.innerHTML = count;
     }
   });
-});
+} else {
+  location.reload();
+}
 
 restartButton.addEventListener("click", function () {
   location.reload();
